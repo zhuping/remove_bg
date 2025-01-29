@@ -4,8 +4,8 @@ from .api.routes import router
 from .cli.commands import app as cli_app
 
 # 创建 FastAPI 应用
-api = FastAPI(title="Background Removal API")
-api.include_router(router)
+app = FastAPI(title="Background Removal API")
+app.include_router(router)
 
 if __name__ == "__main__":
     import sys
@@ -14,4 +14,4 @@ if __name__ == "__main__":
         cli_app()
     else:
         # 否则运行 API 服务器
-        uvicorn.run(api, host="0.0.0.0", port=8000)
+        uvicorn.run(app, host="0.0.0.0", port=8000)

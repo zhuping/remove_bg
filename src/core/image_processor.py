@@ -102,6 +102,7 @@ class ImageProcessor:
     def process_image(
         input_path: str,
         output_path: str,
+        model_name: str = "u2net",
         alpha_matting: bool = False,
         alpha_matting_foreground_threshold: int = 240,
         alpha_matting_background_threshold: int = 10,
@@ -113,6 +114,7 @@ class ImageProcessor:
         Args:
             input_path: 输入图片路径
             output_path: 输出图片路径
+            model_name: 使用的模型名称 (u2net, u2netp, u2net_human_seg, silueta 等)
             alpha_matting: 是否使用alpha matting
             alpha_matting_foreground_threshold: alpha matting前景阈值
             alpha_matting_background_threshold: alpha matting背景阈值
@@ -139,6 +141,7 @@ class ImageProcessor:
             # 移除背景
             output_image = remove(
                 input_image,
+                model_name=model_name,
                 alpha_matting=alpha_matting,
                 alpha_matting_foreground_threshold=alpha_matting_foreground_threshold,
                 alpha_matting_background_threshold=alpha_matting_background_threshold,
