@@ -22,31 +22,31 @@ pip install -r requirements.txt
 1. 基本使用：
 
 ```bash
-python src/main.py
+python -m src.main
 ```
 
 2. 指定输入输出目录和工作线程数：
 
 ```bash
-python src/main.py --input-dir my_images --output-dir results --workers 8
+python -m src.main --input-dir my_images --output-dir results --workers 8
 ```
 
 3. 启用 alpha matting（可获得更好的边缘效果，但处理速度较慢）：
 
 ```bash
-python src/main.py --alpha-matting
+python -m src.main --alpha-matting
 ```
 
 4. 指定支持的文件格式：
 
 ```bash
-python src/main.py --formats "png,jpg,webp"
+python -m src.main --formats "png,jpg,webp"
 ```
 
 5. 查看帮助信息：
 
 ```bash
-python src/main.py --help
+python -m src.main --help
 ```
 
 处理后的图片将保存在 `output` 文件夹中。

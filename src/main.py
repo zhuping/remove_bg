@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
-from .api.routes import router
-from .cli.commands import app as cli_app
+from src.api.routes import router
+from src.cli.commands import app as cli_app
 
 # 创建 FastAPI 应用
 app = FastAPI(title="Background Removal API")
